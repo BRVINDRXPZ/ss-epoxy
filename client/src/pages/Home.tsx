@@ -276,7 +276,7 @@ export default function Home() {
           phone: formData.phone,
           project_type: formData.projectType,
           message: formData.details,
-          to_email: "sheamajoria33@gmail.com",
+          to_email: "ssepoxyla@gmail.com",
         },
         "YOUR_EMAILJS_PUBLIC_KEY" // ← Replace with your EmailJS Public Key
       );
