@@ -5,6 +5,7 @@
              Projects Gallery, Testimonials, CTA Band, Contact, Footer
    ============================================================ */
 import { useEffect, useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import Navbar from "@/components/Navbar";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import {
@@ -82,7 +83,7 @@ const services = [
     subtitle: "Garage Floors, Basements & Patios",
     desc: "Transform your garage, basement, or living space with beautiful, durable epoxy flooring designed for everyday life. Custom colors and metallic finishes available.",
     tags: ["Garage Floors", "Basements", "Patios", "Custom Designs"],
-    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+    img: "/manus-storage/flake-garage-floor_016a9735.jpg",
   },
   {
     icon: Building2,
@@ -98,7 +99,7 @@ const services = [
     subtitle: "Warehouses & Manufacturing",
     desc: "Heavy-duty systems engineered for warehouses, factories, and facilities requiring maximum performance. Chemical-resistant, anti-slip, and built for punishment.",
     tags: ["Warehouses", "Manufacturing", "Auto Shops", "Chemical Resistant"],
-    img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80",
+    img: "/manus-storage/warehouse-epoxy-floor_4f90463f.jpg",
   },
   {
     icon: Layers,
@@ -161,7 +162,7 @@ const projects = [
     cat: "Residential",
     title: "Modern Garage Transformation",
     location: "Metairie, LA",
-    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+    img: "/manus-storage/flake-garage-floor_016a9735.jpg",
   },
   {
     cat: "Commercial",
@@ -173,7 +174,7 @@ const projects = [
     cat: "Industrial",
     title: "Industrial Facility",
     location: "Kenner, LA",
-    img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80",
+    img: "/manus-storage/warehouse-epoxy-floor_4f90463f.jpg",
   },
   {
     cat: "Residential",
@@ -252,6 +253,8 @@ export default function Home() {
     details: "",
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formError, setFormError] = useState(false);
+  const [formLoading, setFormLoading] = useState(false);
 
   const filters = ["All", "Residential", "Commercial", "Industrial"];
   const filteredProjects =
@@ -259,9 +262,30 @@ export default function Home() {
       ? projects
       : projects.filter((p) => p.cat === activeFilter);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
+    setFormLoading(true);
+    setFormError(false);
+    try {
+      await emailjs.send(
+        "service_ssepoxy",       // ← Replace with your EmailJS Service ID
+        "template_ssepoxy",      // ← Replace with your EmailJS Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          project_type: formData.projectType,
+          message: formData.details,
+          to_email: "sheamajoria33@gmail.com",
+        },
+        "YOUR_EMAILJS_PUBLIC_KEY" // ← Replace with your EmailJS Public Key
+      );
+      setFormSubmitted(true);
+    } catch (_err) {
+      setFormError(true);
+    } finally {
+      setFormLoading(false);
+    }
   };
 
   const amber = "oklch(0.62 0.27 295)";
@@ -1502,13 +1526,19 @@ export default function Home() {
                     />
                   </div>
 
+                  {formError && (
+                    <p style={{ color: "oklch(0.7 0.22 25)", fontSize: "0.85rem", textAlign: "center", marginTop: "0.5rem" }}>
+                      Something went wrong. Please call us at (504) 481-7533 or try again.
+                    </p>
+                  )}
                   <button
                     type="submit"
+                    disabled={formLoading}
                     className="w-full btn-purple flex items-center justify-center gap-2"
-                    style={{ marginTop: "0.5rem" }}
+                    style={{ marginTop: "0.5rem", opacity: formLoading ? 0.7 : 1 }}
                   >
-                    Submit Request
-                    <ArrowRight size={16} />
+                    {formLoading ? "Sending..." : "Submit Request"}
+                    {!formLoading && <ArrowRight size={16} />}
                   </button>
                 </form>
               )}
