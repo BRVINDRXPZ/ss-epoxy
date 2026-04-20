@@ -264,12 +264,13 @@ export default function Home() {
     setFormSubmitted(true);
   };
 
-  const amber = "oklch(0.65 0.18 55)";
-  const charcoal = "oklch(0.13 0.005 260)";
-  const surface = "oklch(0.18 0.005 260)";
-  const elevated = "oklch(0.22 0.006 260)";
-  const cream = "oklch(0.92 0.015 80)";
-  const muted = "oklch(0.60 0.01 260)";
+  const amber = "oklch(0.62 0.27 295)";
+  const purpleGrad = "linear-gradient(135deg, oklch(0.55 0.28 295), oklch(0.68 0.25 295))";
+  const charcoal = "oklch(0.12 0.012 295)";
+  const surface = "oklch(0.17 0.015 295)";
+  const elevated = "oklch(0.21 0.016 295)";
+  const cream = "oklch(0.95 0.005 260)";
+  const muted = "oklch(0.58 0.008 260)";
 
   return (
     <div
@@ -294,7 +295,7 @@ export default function Home() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(to top, oklch(0.10 0.005 260 / 0.98) 0%, oklch(0.13 0.005 260 / 0.7) 40%, oklch(0.13 0.005 260 / 0.3) 100%)",
+                "linear-gradient(to top, oklch(0.10 0.012 295 / 0.98) 0%, oklch(0.12 0.012 295 / 0.75) 40%, oklch(0.12 0.012 295 / 0.35) 100%)",
             }}
           />
         </div>
@@ -332,7 +333,7 @@ export default function Home() {
                 fontFamily: "'Barlow', sans-serif",
                 fontWeight: 300,
                 fontSize: "clamp(1rem, 2vw, 1.25rem)",
-                color: "oklch(0.80 0.01 80)",
+                color: "oklch(0.80 0.008 260)",
                 maxWidth: "36rem",
                 lineHeight: 1.6,
                 marginBottom: "2.5rem",
@@ -351,7 +352,7 @@ export default function Home() {
                     .querySelector("#contact")
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="btn-amber flex items-center gap-2"
+                className="btn-purple flex items-center gap-2"
               >
                 Get a Free Quote
                 <ArrowRight size={16} />
@@ -362,7 +363,7 @@ export default function Home() {
                     .querySelector("#projects")
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="btn-outline-amber flex items-center gap-2"
+                className="btn-outline-purple flex items-center gap-2"
               >
                 View Our Work
                 <ChevronRight size={16} />
@@ -379,7 +380,7 @@ export default function Home() {
           <span>Scroll</span>
           <div
             className="w-px h-12 animate-pulse"
-            style={{ background: amber }}
+            style={{ background: "linear-gradient(135deg, oklch(0.55 0.28 295), oklch(0.68 0.25 295))" }}
           />
         </div>
       </section>
@@ -415,7 +416,7 @@ export default function Home() {
                     fontFamily: "'Barlow', sans-serif",
                     fontWeight: 600,
                     fontSize: "0.75rem",
-                    color: "oklch(0.25 0.005 260)",
+                    color: "oklch(0.88 0.005 260)",
                     textTransform: "uppercase",
                     letterSpacing: "0.1em",
                     marginTop: "0.25rem",
@@ -520,7 +521,7 @@ export default function Home() {
               <p
                 className="reveal reveal-delay-2"
                 style={{
-                  color: "oklch(0.72 0.01 80)",
+                  color: "oklch(0.72 0.008 260)",
                   lineHeight: 1.8,
                   marginBottom: "1rem",
                   fontWeight: 300,
@@ -535,7 +536,7 @@ export default function Home() {
               <p
                 className="reveal reveal-delay-2"
                 style={{
-                  color: "oklch(0.72 0.01 80)",
+                  color: "oklch(0.72 0.008 260)",
                   lineHeight: 1.8,
                   marginBottom: "2.5rem",
                   fontWeight: 300,
@@ -656,7 +657,7 @@ export default function Home() {
                     className="absolute inset-0"
                     style={{
                       background:
-                        "linear-gradient(to top, oklch(0.13 0.005 260 / 0.95) 0%, transparent 60%)",
+                        "linear-gradient(to top, oklch(0.10 0.012 295 / 0.95) 0%, transparent 60%)",
                     }}
                   />
                   <div className="absolute bottom-4 left-4">
@@ -699,7 +700,7 @@ export default function Home() {
                   </h3>
                   <p
                     style={{
-                      color: "oklch(0.68 0.01 80)",
+                      color: "oklch(0.68 0.008 260)",
                       fontSize: "0.875rem",
                       lineHeight: 1.7,
                       marginBottom: "1rem",
@@ -714,7 +715,7 @@ export default function Home() {
                         key={tag}
                         style={{
                           background: elevated,
-                          color: "oklch(0.72 0.01 80)",
+                          color: "oklch(0.72 0.008 260)",
                           fontSize: "0.7rem",
                           fontWeight: 500,
                           padding: "0.25rem 0.625rem",
@@ -808,7 +809,7 @@ export default function Home() {
                     fontFamily: "'Barlow Condensed', sans-serif",
                     fontWeight: 900,
                     fontSize: "3.5rem",
-                    color: "oklch(0.65 0.18 55 / 0.15)",
+                    color: "oklch(0.62 0.27 295 / 0.15)",
                     lineHeight: 1,
                     marginBottom: "0.75rem",
                   }}
@@ -829,7 +830,7 @@ export default function Home() {
                 <p
                   style={{
                     fontSize: "0.875rem",
-                    color: "oklch(0.68 0.01 80)",
+                    color: "oklch(0.68 0.008 260)",
                     lineHeight: 1.7,
                     fontWeight: 300,
                   }}
@@ -887,7 +888,7 @@ export default function Home() {
                     letterSpacing: "0.08em",
                     padding: "0.5rem 1.25rem",
                     background: activeFilter === f ? amber : elevated,
-                    color: activeFilter === f ? charcoal : "oklch(0.72 0.01 80)",
+                    color: activeFilter === f ? "oklch(0.98 0 0)" : "oklch(0.72 0.008 260)",
                     border: "none",
                     transition: "all 0.2s ease",
                   }}
@@ -915,7 +916,7 @@ export default function Home() {
                   className="absolute inset-0 transition-opacity duration-300"
                   style={{
                     background:
-                      "linear-gradient(to top, oklch(0.10 0.005 260 / 0.95) 0%, transparent 50%)",
+                      "linear-gradient(to top, oklch(0.10 0.012 295 / 0.95) 0%, transparent 50%)",
                   }}
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-4">
@@ -1007,7 +1008,7 @@ export default function Home() {
                 </div>
                 <p
                   style={{
-                    color: "oklch(0.78 0.01 80)",
+                    color: "oklch(0.78 0.008 260)",
                     fontSize: "0.9rem",
                     lineHeight: 1.7,
                     fontWeight: 300,
@@ -1121,7 +1122,7 @@ export default function Home() {
           <p
             className="reveal reveal-delay-1"
             style={{
-              color: "oklch(0.25 0.005 260)",
+              color: "oklch(0.88 0.005 260)",
               fontSize: "1.1rem",
               fontWeight: 400,
               maxWidth: "36rem",
@@ -1152,7 +1153,7 @@ export default function Home() {
                 transition: "all 0.25s ease",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.background = "oklch(0.18 0.005 260)";
+                (e.currentTarget as HTMLButtonElement).style.background = "oklch(0.17 0.015 295)";
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLButtonElement).style.background = charcoal;
@@ -1184,7 +1185,7 @@ export default function Home() {
           </div>
           <div
             className="flex flex-wrap justify-center gap-6 mt-6 reveal reveal-delay-3"
-            style={{ color: "oklch(0.30 0.005 260)", fontSize: "0.875rem", fontWeight: 500 }}
+            style={{ color: "oklch(0.88 0.005 260)", fontSize: "0.875rem", fontWeight: 500 }}
           >
             {["Free Estimates", "24-Hour Response", "Licensed & Insured"].map(
               (item) => (
@@ -1226,7 +1227,7 @@ export default function Home() {
               <p
                 className="reveal reveal-delay-2"
                 style={{
-                  color: "oklch(0.68 0.01 80)",
+                  color: "oklch(0.68 0.008 260)",
                   lineHeight: 1.8,
                   marginBottom: "2.5rem",
                   fontWeight: 300,
@@ -1246,7 +1247,7 @@ export default function Home() {
                 >
                   <div
                     className="flex items-center justify-center w-10 h-10 flex-shrink-0"
-                    style={{ background: amber }}
+                    style={{ background: "linear-gradient(135deg, oklch(0.55 0.28 295), oklch(0.68 0.25 295))" }}
                   >
                     <Phone size={18} style={{ color: charcoal }} />
                   </div>
@@ -1266,7 +1267,7 @@ export default function Home() {
                 >
                   <div
                     className="flex items-center justify-center w-10 h-10 flex-shrink-0"
-                    style={{ background: amber }}
+                    style={{ background: "linear-gradient(135deg, oklch(0.55 0.28 295), oklch(0.68 0.25 295))" }}
                   >
                     <MapPin size={18} style={{ color: charcoal }} />
                   </div>
@@ -1291,7 +1292,7 @@ export default function Home() {
                 >
                   <div
                     className="flex items-center justify-center w-10 h-10 flex-shrink-0"
-                    style={{ background: amber }}
+                    style={{ background: "linear-gradient(135deg, oklch(0.55 0.28 295), oklch(0.68 0.25 295))" }}
                   >
                     <Facebook size={18} style={{ color: charcoal }} />
                   </div>
@@ -1503,7 +1504,7 @@ export default function Home() {
 
                   <button
                     type="submit"
-                    className="w-full btn-amber flex items-center justify-center gap-2"
+                    className="w-full btn-purple flex items-center justify-center gap-2"
                     style={{ marginTop: "0.5rem" }}
                   >
                     Submit Request
@@ -1519,7 +1520,7 @@ export default function Home() {
       {/* ── FOOTER ────────────────────────────────────────────────────────── */}
       <footer
         style={{
-          background: "oklch(0.10 0.005 260)",
+          background: "oklch(0.09 0.012 295)",
           padding: "4rem 0 2rem",
           borderTop: `1px solid oklch(1 0 0 / 0.06)`,
         }}
@@ -1528,29 +1529,11 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
             {/* Brand */}
             <div className="lg:col-span-1">
-              <div
-                style={{
-                  fontFamily: "'Barlow Condensed', sans-serif",
-                  fontWeight: 900,
-                  fontSize: "2rem",
-                  color: amber,
-                  lineHeight: 1,
-                  marginBottom: "0.25rem",
-                }}
-              >
-                SS EPOXY
-              </div>
-              <div
-                style={{
-                  fontSize: "0.7rem",
-                  color: muted,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.2em",
-                  marginBottom: "1rem",
-                }}
-              >
-                Epoxy Flooring
-              </div>
+              <img
+                src="/manus-storage/ss-epoxy-logo_9b925627.png"
+                alt="SS Epoxy Logo"
+                style={{ height: "3.5rem", width: "auto", objectFit: "contain", marginBottom: "1rem" }}
+              />
               <p
                 style={{
                   fontSize: "0.85rem",
