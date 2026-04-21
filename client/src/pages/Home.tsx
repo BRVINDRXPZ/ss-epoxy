@@ -268,8 +268,8 @@ export default function Home() {
     setFormError(false);
     try {
       await emailjs.send(
-        "service_ssepoxy",       // ← Replace with your EmailJS Service ID
-        "template_ssepoxy",      // ← Replace with your EmailJS Template ID
+        "service_563vg0x",
+        "template_kj2jqn4",
         {
           from_name: formData.name,
           from_email: formData.email,
@@ -278,7 +278,7 @@ export default function Home() {
           message: formData.details,
           to_email: "ssepoxyla@gmail.com",
         },
-        "YOUR_EMAILJS_PUBLIC_KEY" // ← Replace with your EmailJS Public Key
+        "C8tsf_Smn1JrvN5Tp"
       );
       setFormSubmitted(true);
     } catch (_err) {
