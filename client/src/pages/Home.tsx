@@ -272,7 +272,7 @@ export default function Home() {
     try {
       await emailjs.send(
         "service_563vg0x",
-        "template_kj2jqn4",
+        "template_uddc6n5",
         {
           from_name: formData.name,
           from_email: formData.email,
