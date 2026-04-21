@@ -242,6 +242,9 @@ const testimonials = [
 ];
 
 // ─── Main Component ───────────────────────────────────────────────────────────
+// EmailJS v4 — initialize with public key once at module level
+emailjs.init({ publicKey: "C8tsf_Smn1JrvN5Tp" });
+
 export default function Home() {
   useScrollReveal();
   const [activeFilter, setActiveFilter] = useState("All");
@@ -277,8 +280,7 @@ export default function Home() {
           project_type: formData.projectType,
           message: formData.details,
           to_email: "ssepoxyla@gmail.com",
-        },
-        "C8tsf_Smn1JrvN5Tp"
+        }
       );
       setFormSubmitted(true);
     } catch (_err) {
