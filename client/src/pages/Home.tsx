@@ -420,7 +420,7 @@ export default function Home() {
           <div className="grid grid-cols-3 gap-4 lg:gap-0 divide-x divide-black/20">
             {[
               { end: 500, suffix: "+", label: "Projects Completed" },
-              { end: 15, suffix: "+", label: "Years Experience" },
+              { end: 10, suffix: "+", label: "Years Experience" },
               { end: 100, suffix: "%", label: "Satisfaction Rate" },
             ].map((stat) => (
               <div key={stat.label} className="text-center px-4">
@@ -505,7 +505,7 @@ export default function Home() {
                     lineHeight: 1,
                   }}
                 >
-                  15+
+                  10+
                 </span>
                 <span
                   style={{
