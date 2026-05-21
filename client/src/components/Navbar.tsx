@@ -51,7 +51,7 @@ export default function Navbar() {
               className="flex items-center gap-2 group"
             >
               <img
-                src="/manus-storage/ss-epoxy-logo_9b925627.png"
+                src="/SS EPOXY LOGO Vector (1).PNG"
                 alt="SS Epoxy Logo"
                 className="h-10 lg:h-12 w-auto object-contain"
               />
