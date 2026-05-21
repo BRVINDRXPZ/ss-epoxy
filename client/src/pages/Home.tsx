@@ -1562,7 +1562,7 @@ export default function Home() {
             {/* Brand */}
             <div className="lg:col-span-1">
               <img
-                src="/manus-storage/ss-epoxy-logo_9b925627.png"
+                src="/SS EPOXY LOGO Vector (1).PNG"
                 alt="SS Epoxy Logo"
                 style={{ height: "3.5rem", width: "auto", objectFit: "contain", marginBottom: "1rem" }}
               />
